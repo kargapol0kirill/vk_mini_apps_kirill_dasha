@@ -17,7 +17,7 @@ const App = () => {
 
 	const socket = useRef(null)
 
-	const SERVER_URL = 'http://localhost:5000'
+	const SERVER_URL = 'https://5.188.141.101:5000'
 
 		useEffect(async () => {
 		bridge.subscribe(({ detail: { type, data }}) => {
@@ -73,7 +73,8 @@ const App = () => {
 		socket.current.emit('message:add', {
 		userId: fetchedUser.id,
 		messageText,  
-		senderName
+		senderName,
+		avatar: fetchedUser.photo_200
 	  })
 	}
 
